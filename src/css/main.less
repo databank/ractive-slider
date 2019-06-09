@@ -1,6 +1,11 @@
 
 @slider-bar-height: 3px;
 
+@slider-bar-disabled-background: #007bff24;
+@slider-handle-disabled-background: #f3d5d5;
+
+@slider-bar-background: #40a6dc;
+
 .dbk-slider {position: relative;height: 24px;}
 
 .dbk-slider > input[type=range] {position: absolute;top: 8px;left: 0px;right: 0px;bottom: 0px;margin: 0;padding: 0;}
@@ -11,7 +16,7 @@
 	width: 100%;
 	height: @slider-bar-height;
 	border-radius: 5px;
-	background: #dccfe2;
+	background: @slider-bar-background;
 	outline: none;
 }
 
@@ -27,6 +32,7 @@
 	height: 25px;
 	border-radius: 50%;
 	background: #a6c;
+	border: 2px solid #fff;
 	cursor: pointer;
 	z-index: 1;
 }
@@ -39,6 +45,23 @@
 	height: 25px;
 	border-radius: 50%;
 	background: #a6c;
+	border: 2px solid #fff;
 	cursor: pointer;
 	z-index: 10;
 }
+
+.dbk-slider > input[type=range]:disabled {
+	background: @slider-bar-disabled-background;
+}
+
+.dbk-slider > input[type=range]:disabled::-webkit-slider-thumb {
+	background: @slider-handle-disabled-background;
+	border: 2px solid #fff;
+	cursor: default;
+}
+.dbk-slider > input[type=range]:disabled::-moz-range-thumb {
+	background: @slider-handle-disabled-background;
+	border: 2px solid #fff;
+	cursor: default;
+}
+
